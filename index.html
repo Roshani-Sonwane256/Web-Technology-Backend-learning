@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Pink Basket - Shop Pretty. Shop Smart. Shop Pink.</title>
+  <meta name="description" content="Pink Basket is a modern e-commerce shopping experience designed to make discovering beautiful and useful products simple, enjoyable and affordable.">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       MAIN NAVBAR
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-pink sticky-top">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand navbar-brand-pink" href="#home">
+        <span>🌸</span> Pink Basket
+      </a>
+
+      <!-- Mobile Right Action & Toggle Buttons -->
+      <div class="d-flex align-items-center gap-2 d-lg-none ms-auto me-2">
+        <button class="btn-icon-pink" id="themeToggleBtnMobile" title="Toggle Theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button class="btn-icon-pink" data-bs-toggle="modal" data-bs-target="#favoritesModal" title="Favorites">
+          <i class="bi bi-heart-fill text-danger"></i>
+          <span class="badge-counter" id="favCounterMobile">0</span>
+        </button>
+        <button class="btn-icon-pink" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Cart">
+          <i class="bi bi-bag-heart-fill"></i>
+          <span class="badge-counter" id="cartCounterMobile">0</span>
+        </button>
+      </div>
+
+      <!-- Hamburger Toggle -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Menu Links -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink" href="#shop">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink" href="#categories">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink" href="#new-arrivals">New Arrivals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink" href="#offers">Offers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-pink" href="#about">About</a>
+          </li>
+        </ul>
+
+        <!-- Navbar Right Actions (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <!-- Search Bar -->
+          <div class="search-input-group">
+            <i class="bi bi-search text-pink"></i>
+            <input type="text" id="navbarSearchInput" placeholder="Search products..." autocomplete="off">
+            <button class="btn btn-sm text-muted p-0 d-none" id="clearSearchBtn" type="button"><i class="bi bi-x-circle-fill"></i></button>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button class="btn-icon-pink" id="themeToggleBtn" title="Toggle Light/Dark Theme">
+            <i class="bi bi-moon-stars" id="themeIcon"></i>
+          </button>
+
+          <!-- Favorites Icon -->
+          <button class="btn-icon-pink" data-bs-toggle="modal" data-bs-target="#favoritesModal" title="Favorites">
+            <i class="bi bi-heart-fill text-danger"></i>
+            <span class="badge-counter" id="favCounterDesktop">0</span>
+          </button>
+
+          <!-- Cart Icon -->
+          <button class="btn-icon-pink" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Cart">
+            <i class="bi bi-bag-heart-fill"></i>
+            <span class="badge-counter" id="cartCounterDesktop">0</span>
+          </button>
+
+          <!-- Account Dropdown or Login -->
+          <div id="userAccountContainer">
+            <button class="btn btn-outline-pink btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="bi bi-person-circle me-1"></i> Account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Search Input Bar -->
+  <div class="container my-3 d-lg-none">
+    <div class="search-input-group w-100 max-w-100">
+      <i class="bi bi-search text-pink"></i>
+      <input type="text" id="navbarSearchInputMobile" placeholder="Search products..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-shape-1"></div>
+    <div class="hero-shape-2"></div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 text-center text-lg-start">
+          <span class="badge rounded-pill bg-white text-danger px-3 py-2 shadow-sm mb-3 border border-pink-subtle">
+            🌸 Welcome to Pink Basket
+          </span>
+          <h1 class="hero-title">
+            Everything You Love,<br>
+            All in One <span>Pink Basket.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover beautiful products, exclusive deals and everyday essentials carefully curated for your delightful lifestyle.
+          </p>
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
+            <a href="#shop" class="btn btn-pink btn-lg px-4 py-3">
+              Shop Now <i class="bi bi-arrow-right-short ms-1"></i>
+            </a>
+            <a href="#categories" class="btn btn-outline-pink btn-lg px-4 py-3">
+              Explore Categories
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="position-relative mx-auto" style="max-width: 520px;">
+            <!-- Floating Badge Top Left -->
+            <div class="hero-floating-badge badge-top-left">
+              <div class="bg-danger text-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                <i class="bi bi-stars"></i>
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold text-dark" style="font-size: 0.85rem;">Flat 20% OFF</h6>
+                <small class="text-muted" style="font-size: 0.75rem;">On Beauty & Fashion</small>
+              </div>
+            </div>
+
+            <!-- Main Hero Collage Image -->
+            <div class="hero-img-card">
+              <img src="assets/images/hero.png" alt="Pink Basket Shopping Illustration" class="img-fluid w-100">
+            </div>
+
+            <!-- Floating Badge Bottom Right -->
+            <div class="hero-floating-badge badge-bottom-right">
+              <div class="bg-success text-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                <i class="bi bi-truck"></i>
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold text-dark" style="font-size: 0.85rem;">Free Express Delivery</h6>
+                <small class="text-muted" style="font-size: 0.75rem;">On orders above ₹999</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CATEGORY SECTION
+       ========================================== -->
+  <section class="py-5" id="categories">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-subtitle">Browse through our handpicked cute & premium collections</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Beauty')">
+            <div class="category-icon-wrapper">💄</div>
+            <h5 class="category-title">Beauty</h5>
+            <p class="category-desc">Glow & Cosmetics</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Fashion')">
+            <div class="category-icon-wrapper">👗</div>
+            <h5 class="category-title">Fashion</h5>
+            <p class="category-desc">Trendy Outfits</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Accessories')">
+            <div class="category-icon-wrapper">👜</div>
+            <h5 class="category-title">Accessories</h5>
+            <p class="category-desc">Bags & Jewelry</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Home')">
+            <div class="category-icon-wrapper">🏠</div>
+            <h5 class="category-title">Home</h5>
+            <p class="category-desc">Cozy & Aesthetic</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Electronics')">
+            <div class="category-icon-wrapper">💻</div>
+            <h5 class="category-title">Electronics</h5>
+            <p class="category-desc">Cute Gadgets</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="category-card" onclick="filterByCategory('Gifts')">
+            <div class="category-icon-wrapper">🎁</div>
+            <h5 class="category-title">Gifts</h5>
+            <p class="category-desc">Special Boxes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       OFFERS SECTION & COUNTDOWN
+       ========================================== -->
+  <section class="py-4" id="offers">
+    <div class="container">
+      <div class="offers-banner">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7 text-center text-lg-start">
+            <span class="badge bg-white text-danger font-weight-bold px-3 py-2 mb-2 rounded-pill">
+              🔥 Limited Time Offer
+            </span>
+            <h2 class="fw-extrabold text-white display-6 mb-2">Pink Deals of the Day 💗</h2>
+            <p class="opacity-90 lead mb-3">
+              Unlock exclusive discounts! Flat 20% OFF + Buy 2 Get 1 Free on selected blush picks.
+            </p>
+            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+              <span class="bg-white text-danger px-3 py-1 rounded-pill fw-bold text-sm"><i class="bi bi-tag-fill me-1"></i> Flat 20% OFF</span>
+              <span class="bg-white text-danger px-3 py-1 rounded-pill fw-bold text-sm"><i class="bi bi-gift-fill me-1"></i> Buy 2 Get 1 Free</span>
+              <span class="bg-white text-danger px-3 py-1 rounded-pill fw-bold text-sm"><i class="bi bi-truck me-1"></i> Free Delivery Above ₹999</span>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="d-flex justify-content-center justify-content-lg-end gap-2 text-white">
+              <div class="countdown-box">
+                <div class="countdown-num" id="cdDays">02</div>
+                <div class="countdown-label">Days</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cdHours">15</div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cdMins">45</div>
+                <div class="countdown-label">Mins</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cdSecs">32</div>
+                <div class="countdown-label">Secs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FEATURED PRODUCTS SECTION
+       ========================================== -->
+  <section class="py-5" id="shop">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Featured Picks ✨</h2>
+        <p class="section-subtitle">Explore our most popular and loved pink items</p>
+      </div>
+
+      <!-- Filters & Sorting Control Bar -->
+      <div class="card p-3 mb-4 border-0 shadow-sm rounded-4 bg-body-tertiary">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-md-6 col-lg-3">
+            <label class="form-label small fw-bold mb-1"><i class="bi bi-grid-fill me-1 text-danger"></i> Category</label>
+            <select class="form-select form-select-sm rounded-pill" id="filterCategorySelect" onchange="handleFilterChange()">
+              <option value="All">All Categories</option>
+              <option value="Beauty">Beauty 💄</option>
+              <option value="Fashion">Fashion 👗</option>
+              <option value="Accessories">Accessories 👜</option>
+              <option value="Home">Home 🏠</option>
+              <option value="Electronics">Electronics 💻</option>
+              <option value="Gifts">Gifts 🎁</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <label class="form-label small fw-bold mb-1"><i class="bi bi-cash-stack me-1 text-danger"></i> Price Range</label>
+            <select class="form-select form-select-sm rounded-pill" id="filterPriceSelect" onchange="handleFilterChange()">
+              <option value="All">All Prices</option>
+              <option value="under-500">Under ₹500</option>
+              <option value="500-1000">₹500 – ₹1,000</option>
+              <option value="1000-2000">₹1,000 – ₹2,000</option>
+              <option value="above-2000">Above ₹2,000</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <label class="form-label small fw-bold mb-1"><i class="bi bi-star-fill me-1 text-warning"></i> Minimum Rating</label>
+            <select class="form-select form-select-sm rounded-pill" id="filterRatingSelect" onchange="handleFilterChange()">
+              <option value="All">All Ratings</option>
+              <option value="4">⭐ 4.0 & above</option>
+              <option value="4.5">⭐ 4.5 & above</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <label class="form-label small fw-bold mb-1"><i class="bi bi-sort-down me-1 text-danger"></i> Sort By</label>
+            <select class="form-select form-select-sm rounded-pill" id="sortSelect" onchange="handleFilterChange()">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Newest Arrivals</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Result Status Header -->
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div id="productResultsInfo" class="fw-semibold text-muted">
+          Showing <span id="productResultsCount" class="text-danger fw-bold">15</span> products
+        </div>
+        <button class="btn btn-link text-decoration-none btn-sm text-danger p-0 d-none" id="resetFiltersBtn" onclick="resetAllFilters()">
+          <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
+        </button>
+      </div>
+
+      <!-- Dynamic Product Cards Grid -->
+      <div class="row g-4" id="productsGrid">
+        <!-- Javascript populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       NEW ARRIVALS SECTION
+       ========================================== -->
+  <section class="py-5 bg-body-tertiary" id="new-arrivals">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h2 class="section-title text-start mb-0">New Arrivals ✨</h2>
+          <p class="section-subtitle text-start mb-0">Fresh pink releases just added to our basket</p>
+        </div>
+        <a href="#shop" class="btn btn-outline-pink btn-sm">View All</a>
+      </div>
+
+      <div class="row g-4" id="newArrivalsGrid">
+        <!-- JavaScript populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT & FEATURES SECTION
+       ========================================== -->
+  <section class="py-5" id="about">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <span class="badge rounded-pill bg-danger-subtle text-danger px-3 py-2 mb-3 fw-bold">
+            🌸 About Pink Basket
+          </span>
+          <h2 class="fw-bold display-6 mb-3">Shop Pretty. Shop Smart. Shop Pink.</h2>
+          <p class="text-muted lead mb-4">
+            Pink Basket is a modern shopping experience designed to make discovering beautiful and useful products simple, enjoyable and affordable.
+          </p>
+          <p class="text-muted mb-4">
+            Whether you're looking for trendy fashion, hydrating skincare, elegant aesthetic accessories, or cozy home accents, we deliver handpicked quality directly to your doorstep with love and care.
+          </p>
+
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-4">
+                <div class="fs-2 text-danger">✨</div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Curated Products</h6>
+                  <small class="text-muted">100% Verified Quality</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-4">
+                <div class="fs-2 text-danger">💗</div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Customer First</h6>
+                  <small class="text-muted">24/7 Friendly Care</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-4">
+                <div class="fs-2 text-danger">🚚</div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Fast Delivery</h6>
+                  <small class="text-muted">Quick & Reliable</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-3 p-3 bg-body-tertiary rounded-4">
+                <div class="fs-2 text-danger">🔒</div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Secure Shopping</h6>
+                  <small class="text-muted">Protected Payments</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <div class="p-4 bg-white rounded-5 shadow-lg border border-pink-subtle position-relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Pink Basket About" class="img-fluid rounded-4 shadow-sm">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TESTIMONIALS SECTION
+       ========================================== -->
+  <section class="py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Customer Love 💕</h2>
+        <p class="section-subtitle">See what our lovely shoppers are saying</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text text-muted">
+              “Absolutely loved the shopping experience! The Rose Glow lipstick and pink handbag were packaged so beautifully, and the interface is so easy to use.”
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+              <div class="bg-danger text-white rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 42px; height: 42px;">A</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Ananya Sharma</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text text-muted">
+              “Pink Basket is my absolute favorite store! Fast delivery, great quality products, and the dark pink mode layout looks super aesthetic!”
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+              <div class="bg-danger text-white rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 42px; height: 42px;">R</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Roshani Verma</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <div class="text-warning mb-3">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="card-text text-muted">
+              “Super smooth ordering experience! The Bluetooth earbuds and cute desk lamp exceeded my expectations. Will definitely shop here again!”
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+              <div class="bg-danger text-white rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 42px; height: 42px;">P</div>
+              <div>
+                <h6 class="mb-0 fw-bold">Priya Patel</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       NEWSLETTER SECTION
+       ========================================== -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--pb-primary-soft) 0%, var(--pb-primary-light) 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="fw-bold mb-2 text-dark">Stay in the Pink Loop 💌</h2>
+          <p class="text-muted mb-4">
+            Get instant updates about new arrivals, flash deals and exclusive secret pink coupon codes!
+          </p>
+          <form onsubmit="handleSubscribe(event)" class="d-flex flex-column flex-sm-row justify-content-center gap-2 max-w-md mx-auto">
+            <input type="email" class="form-control rounded-pill px-4 py-3 border-0 shadow-sm" placeholder="Enter your email address..." required id="newsletterEmail">
+            <button type="submit" class="btn btn-pink px-4 py-3">Subscribe 💗</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer-pink">
+    <div class="container">
+      <div class="row gy-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand d-inline-block mb-3" href="#home">🌸 Pink Basket</a>
+          <p class="mb-3">
+            Shop Pretty. Shop Smart. Shop Pink. Your favorite pink-themed aesthetic marketplace for beauty, fashion, home decor & gadgets.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn-icon-pink" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-icon-pink" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-icon-pink" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn-icon-pink" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h6 class="fw-bold text-dark mb-3">Shop Categories</h6>
+          <a href="#shop" onclick="filterByCategory('Beauty')">Beauty & Cosmetics</a>
+          <a href="#shop" onclick="filterByCategory('Fashion')">Fashion & Apparel</a>
+          <a href="#shop" onclick="filterByCategory('Accessories')">Jewelry & Bags</a>
+          <a href="#shop" onclick="filterByCategory('Home')">Home & Living</a>
+          <a href="#shop" onclick="filterByCategory('Electronics')">Pink Gadgets</a>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h6 class="fw-bold text-dark mb-3">Customer Service</h6>
+          <a href="#about">About Us</a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#myOrdersModal">Track Order</a>
+          <a href="#">Shipping & Delivery</a>
+          <a href="#">Returns & Exchanges</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h6 class="fw-bold text-dark mb-3">Contact Us</h6>
+          <p class="small mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i> 101 Pink Basket Tower, Fashion City, India</p>
+          <p class="small mb-2"><i class="bi bi-envelope-fill text-danger me-2"></i> support@pinkbasket.com</p>
+          <p class="small mb-3"><i class="bi bi-telephone-fill text-danger me-2"></i> +91 1800-PINK-BASKET</p>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill"><i class="bi bi-shield-check me-1"></i> 100% Safe & Secure Checkout</span>
+        </div>
+      </div>
+
+      <div class="border-top pt-4 text-center">
+        <p class="small mb-0">© 2026 🌸 Pink Basket. All Rights Reserved. Crafted with 💖 for College Demonstration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" title="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
+
+  <!-- ==========================================
+       SHOPPING CART SIDEBAR (OFFCANVAS)
+       ========================================== -->
+  <div class="offcanvas offcanvas-end offcanvas-pink" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel" style="width: 400px; max-width: 90vw;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">
+        🛒 Your Cart (<span id="cartCountTitle">0</span>)
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column" id="cartBody">
+      <!-- JavaScript populated cart items -->
+    </div>
+
+    <div class="offcanvas-footer p-3 border-top bg-body-tertiary" id="cartFooter">
+      <div class="d-flex justify-content-between mb-1">
+        <span class="text-muted">Subtotal</span>
+        <span class="fw-bold" id="cartSubtotal">₹0</span>
+      </div>
+      <div class="d-flex justify-content-between mb-1 text-success">
+        <span>Discount</span>
+        <span class="fw-bold" id="cartDiscount">-₹0</span>
+      </div>
+      <div class="d-flex justify-content-between mb-2">
+        <span class="text-muted">Delivery Fee</span>
+        <span class="fw-bold" id="cartDelivery">₹49</span>
+      </div>
+      <div class="d-flex justify-content-between fs-5 fw-extrabold mb-3 pt-2 border-top">
+        <span>Total Amount</span>
+        <span class="text-danger" id="cartTotal">₹0</span>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-pink py-2" id="proceedCheckoutBtn" onclick="openCheckoutModal()">Proceed to Checkout 💗</button>
+        <button class="btn btn-outline-pink py-2" data-bs-dismiss="offcanvas">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FAVORITES / WISHLIST MODAL
+       ========================================== -->
+  <div class="modal fade" id="favoritesModal" tabindex="-1" aria-labelledby="favoritesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-header-title fw-bold m-0" id="favoritesModalLabel">
+            ❤️ Your Favorites (<span id="favModalCount">0</span>)
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="favoritesModalBody">
+          <!-- Javascript populated wishlist -->
+        </div>
+        <div class="modal-footer border-top-0">
+          <button type="button" class="btn btn-outline-pink" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PRODUCT DETAILS MODAL
+       ========================================== -->
+  <div class="modal fade" id="productDetailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-title fw-bold" id="detailProductName">Product Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4" id="detailModalContent">
+            <!-- Javascript populated details -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       LOGIN MODAL
+       ========================================== -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-title fw-bold">🌸 Welcome to Pink Basket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form onsubmit="handleLoginSubmit(event)">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control rounded-3" id="loginEmail" placeholder="roshani@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Password</label>
+              <input type="password" class="form-control rounded-3" id="loginPassword" placeholder="••••••••" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label small" for="rememberMe">Remember me</label>
+              </div>
+              <a href="#" class="small text-danger" onclick="alert('Demo reset link sent to your email!')">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-pink w-100 py-2 mb-3">Login to Account 🌸</button>
+            <p class="text-center small mb-0 text-muted">
+              Don't have an account? <a href="#" class="text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SIGNUP MODAL
+       ========================================== -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-title fw-bold">🌸 Create Your Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form onsubmit="handleSignupSubmit(event)">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Full Name</label>
+              <input type="text" class="form-control rounded-3" id="signupName" placeholder="Roshani Verma" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control rounded-3" id="signupEmail" placeholder="roshani@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Password</label>
+              <input type="password" class="form-control rounded-3" id="signupPassword" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-pink w-100 py-2 mb-3">Create Pink Basket Account 💗</button>
+            <p class="text-center small mb-0 text-muted">
+              Already have an account? <a href="#" class="text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CHECKOUT MODAL
+       ========================================== -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-title fw-bold">🛍️ Checkout - Pink Basket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="checkoutForm" onsubmit="handlePlaceOrder(event)">
+            <div class="row g-4">
+              <!-- Shipping Details -->
+              <div class="col-md-7">
+                <h6 class="fw-bold mb-3 text-danger"><i class="bi bi-geo-alt-fill me-1"></i> 1. Delivery Address</h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-semibold">Full Name</label>
+                    <input type="text" class="form-control" id="checkoutName" required placeholder="Roshani Verma">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-semibold">Mobile Number</label>
+                    <input type="tel" class="form-control" id="checkoutPhone" required placeholder="+91 9876543210">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-semibold">Street Address</label>
+                    <input type="text" class="form-control" id="checkoutAddress" required placeholder="Flat 402, Rosewood Apartments">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-semibold">City</label>
+                    <input type="text" class="form-control" id="checkoutCity" required placeholder="Mumbai">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-semibold">State</label>
+                    <input type="text" class="form-control" id="checkoutState" required placeholder="Maharashtra">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small fw-semibold">PIN Code</label>
+                    <input type="text" class="form-control" id="checkoutPin" required placeholder="400001">
+                  </div>
+                </div>
+
+                <h6 class="fw-bold mt-4 mb-3 text-danger"><i class="bi bi-credit-card-fill me-1"></i> 2. Payment Method</h6>
+                <div class="d-flex flex-column gap-2">
+                  <div class="form-check p-3 bg-body-tertiary rounded-3 border">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="payUPI" value="UPI" checked>
+                    <label class="form-check-label fw-bold d-flex align-items-center gap-2" for="payUPI">
+                      <span>📱 UPI (GPay / PhonePe / Paytm)</span>
+                    </label>
+                  </div>
+                  <div class="form-check p-3 bg-body-tertiary rounded-3 border">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="payCard" value="Credit/Debit Card">
+                    <label class="form-check-label fw-bold d-flex align-items-center gap-2" for="payCard">
+                      <span>💳 Credit / Debit Card</span>
+                    </label>
+                  </div>
+                  <div class="form-check p-3 bg-body-tertiary rounded-3 border">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="payCOD" value="Cash on Delivery">
+                    <label class="form-check-label fw-bold d-flex align-items-center gap-2" for="payCOD">
+                      <span>💵 Cash on Delivery (COD)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Summary Side Card -->
+              <div class="col-md-5">
+                <div class="card bg-body-tertiary border-0 rounded-4 p-3 h-100">
+                  <h6 class="fw-bold mb-3 text-danger"><i class="bi bi-receipt me-1"></i> Order Summary</h6>
+                  <div id="checkoutItemsList" class="mb-3 overflow-auto max-vh-30">
+                    <!-- Javascript populated -->
+                  </div>
+                  <div class="border-top pt-2">
+                    <div class="d-flex justify-content-between small text-muted mb-1">
+                      <span>Subtotal</span>
+                      <span id="coSubtotal">₹0</span>
+                    </div>
+                    <div class="d-flex justify-content-between small text-success mb-1">
+                      <span>Discount</span>
+                      <span id="coDiscount">-₹0</span>
+                    </div>
+                    <div class="d-flex justify-content-between small text-muted mb-2">
+                      <span>Delivery Fee</span>
+                      <span id="coDelivery">₹49</span>
+                    </div>
+                    <div class="d-flex justify-content-between fs-5 fw-bold text-dark pt-2 border-top">
+                      <span>Total Amount</span>
+                      <span class="text-danger" id="coTotal">₹0</span>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-pink w-100 mt-4 py-3 fw-bold">Place Order 💗</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ORDER SUCCESS MODAL
+       ========================================== -->
+  <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-pink text-center p-4">
+        <div class="modal-body">
+          <div class="display-1 text-danger mb-3">🎉</div>
+          <h3 class="fw-bold text-dark">Thank You for Shopping!</h3>
+          <p class="text-muted">Your order has been successfully placed with 🌸 Pink Basket.</p>
+          
+          <div class="card bg-body-tertiary border-0 p-3 rounded-4 my-4 text-start">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Order ID:</span>
+              <span class="fw-bold text-danger" id="successOrderID">PB202609301245</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Estimated Delivery:</span>
+              <span class="fw-bold text-dark" id="successDeliveryDate">3-5 Business Days</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">Total Paid:</span>
+              <span class="fw-bold text-success" id="successTotal">₹0</span>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-pink flex-grow-1" data-bs-dismiss="modal">Continue Shopping</button>
+            <button class="btn btn-pink flex-grow-1" onclick="openMyOrdersFromSuccess()">View Orders 📦</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MY ORDERS MODAL
+       ========================================== -->
+  <div class="modal fade" id="myOrdersModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-pink">
+        <div class="modal-header modal-header-pink">
+          <h5 class="modal-title fw-bold">📦 My Orders</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="myOrdersModalBody">
+          <!-- Javascript populated orders list -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       TOAST CONTAINER
+       ========================================== -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer">
+    <!-- Dynamic Toasts injected here -->
+  </div>
+
+  <!-- Bootstrap 5.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Products Data -->
+  <script src="js/products.js"></script>
+  
+  <!-- Backend API Client -->
+  <script src="js/api.js"></script>
+  
+  <!-- Main Application Logic -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
