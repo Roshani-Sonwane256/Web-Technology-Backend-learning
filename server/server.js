@@ -10,9 +10,14 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
+const path = require('path');
+
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static frontend files (HTML, CSS, JS, Assets)
+app.use(express.static(path.join(__dirname, '..')));
 
 // Routes Mounting
 app.use('/api/products', require('./routes/productRoutes'));
